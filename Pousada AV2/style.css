@@ -1,0 +1,316 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(#281402 0%, #c77100 40%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  color: #fff;
+  font-size: 2em;
+  cursor: default;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  padding: 6px 15px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:active {
+  background: #25b900;
+}
+
+.sec {
+  
+  padding: 0px;
+}
+
+.sec h2 {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.sec h3 {
+  font-size: 2em;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.sec p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Cards unificados (antes: card1, card2, card3 repetidos) */
+.card {
+  width: 300px;
+  background-color: white;
+  color: #333;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  line-height: 1.5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card p {
+  color: #555;
+}
+
+.card h3 {
+  color: #555;
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 60px;
+  flex-wrap: wrap;
+;
+}
+
+.suite,
+.familia,
+.natureza {
+  width: 300px;
+  height: auto;
+  
+}
+
+/* Seção de parallax */
+.Pousada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #87ceeb;
+}
+
+.Pousada img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+#ceu {
+  z-index: 1;
+}
+
+#montanha {
+  z-index: 2;
+}
+
+#praia {
+  z-index: 3;
+}
+
+#mata {
+  z-index: 4;
+}
+
+.Localizacao img {
+  width: 100%;
+  max-width: 11000px;
+  max-height: 1100px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50px;
+  background: #fff;
+  padding: 10px;
+}
+
+.painel img {
+  width: 100%;
+  max-height: 11000px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50px;
+}
+
+.suite,
+.familia,
+.natureza {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+ 
+}
+
+.suite:hover,
+.familia:hover,
+.natureza:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.suite + p,
+.familia + p,
+.natureza + p {
+  background: #F3E9D2;
+  color: #3a2a12;
+  max-width: 500px;
+  padding: 18px 22px;
+  border-radius: 0 0 12px 12px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.Acomodacoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 30px;
+  max-width: 1100px;
+  margin: 30px auto 0;
+  align-items: start;
+}
+
+.Acomodacoes h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* Coluna 1 — Suíte Maré Serena */
+.Acomodacoes h3:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+.suite                          { grid-column: 1; grid-row: 3; }
+.Acomodacoes p:nth-of-type(1)  { grid-column: 1; grid-row: 4; }
+
+/* Coluna 2 — Quarto Família */
+.Acomodacoes h3:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+.familia                        { grid-column: 2; grid-row: 3; }
+.Acomodacoes p:nth-of-type(2)  { grid-column: 2; grid-row: 4; }
+
+/* Coluna 3 — Suíte Vista para a Natureza */
+.Acomodacoes h3:nth-of-type(3) { grid-column: 3; grid-row: 2; }
+.natureza                       { grid-column: 3; grid-row: 3; }
+.Acomodacoes p:nth-of-type(3)  { grid-column: 3; grid-row: 4; }
+
+.Acomodacoes h3 {
+  text-align: center;
+}
+
+.form {
+  background-color: #fff;
+  margin: 60px auto;
+  padding: 40px;
+  width: 85%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form h2 {
+  color: #3a2a12;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  color: #5c4a2e;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.campo input,
+.campo textarea {
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  resize: none;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #c77100;
+}
+
+.form button {
+  background-color: #c77100;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #a75d00;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 24px;
+  }}
